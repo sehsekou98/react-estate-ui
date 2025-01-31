@@ -14,7 +14,7 @@ nav {
     }
 
     &:hover {
-      scale: 1.05s;
+      scale: 1.5s;
     }
   }
 
@@ -87,12 +87,15 @@ nav {
       position: absolute;
       top: 0;
       right: -50%;
-      background: black;
+      background: rgb(28, 170, 226);
       color: white;
       height: 100vh;
       width: 50%;
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      font-size: 24px;
       transition: all 1s ease;
       
 
@@ -101,7 +104,9 @@ nav {
       }
 
       @include sm{
-        display: initial;
+        a {
+            display: initial;
+        }
       }
     }
   }
