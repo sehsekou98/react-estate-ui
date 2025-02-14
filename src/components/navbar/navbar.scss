@@ -1,20 +1,21 @@
 @import "../../responsive.scss";
 
 nav {
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+ 
 
   a {
     transition: all 0.4s ease;
 
-    @include sm {
+     @include sm {
       display: none;
     }
 
     &:hover {
-      scale: 1.5s;
+      scale: 1.05;
     }
   }
 
@@ -31,12 +32,12 @@ nav {
       align-items: center;
       gap: 10px;
 
-      img {
-        width: 20px;
+    img {
+        width: 28px;
       }
 
       span {
-        @include md {
+         @include md {
           display: none;
         }
 
@@ -52,7 +53,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: #f8f6d6;
+    background-color: #fcf5f3;
     height: 100%;
 
     @include md {
@@ -60,12 +61,12 @@ nav {
     }
 
     a {
-      padding: 12px 20px;
+      padding: 12px 2px;
       margin: 20px;
     }
 
     .register {
-      background-color: hwb(199 32% 0%);
+      background-color: #fece51;
     }
 
     .menuIcon {
@@ -87,7 +88,7 @@ nav {
       position: absolute;
       top: 0;
       right: -50%;
-      background: rgb(28, 170, 226);
+      background: black;
       color: white;
       height: 100vh;
       width: 50%;
