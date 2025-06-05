@@ -1,5 +1,5 @@
 import Chat from "../../components/chat/Chat";
-import List from "../../components/list/List";
+import List from "../../routes/listPage/listPage";
 import "./profilePage.scss";
 
 function ProfilePage() {
