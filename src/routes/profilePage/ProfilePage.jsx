@@ -20,7 +20,7 @@ function ProfilePage() {
               />
             </span>
             <span>
-              Username: <b>John Doe</b>
+              Username: <b>Blama Doe</b>
             </span>
             <span>
               E-mail: <b>john@gmail.com</b>
@@ -30,7 +30,7 @@ function ProfilePage() {
             <h1>My List</h1>
             <button>Create New Post</button>
           </div>
-          <List />
+          <List />  
           <div className="title">
             <h1>Saved List</h1>
           </div>
