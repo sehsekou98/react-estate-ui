@@ -34,9 +34,33 @@ res.status(201).json({message:"User created successfully."});
 
 };
 
-export const login = (req, res) => {
+export const login = async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+
+        // CHECKING IF USER EXISTS
+        const user = await prisma.user.findUnique({
+            where:{username}
+        })
+        if (!user) return res.status(401).json({message: "Invalid credentials"});
+
+        // CHECKING IF PASSWORD IS CORRECT
+
+        const isPasswordVaild = await bcrypt.compare(password, user.password);
+        if(!isPasswordVaild) return res.status(401).json({ message: "Invalid credentials."});
+        
+        // GENERATE COOKIE TOKEN AND SEND TO THE USER.
+
+        res.setHeader("Set-Cookie", "test" + "myValue").json("success")
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({message: "Failed to login."});
+        
+    }
     
-}
+};
 
 export const logout = (req, res) => {
     
