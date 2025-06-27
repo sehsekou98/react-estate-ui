@@ -1,16 +1,14 @@
 @import "../../responsive.scss";
-
 nav {
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
 
   a {
     transition: all 0.4s ease;
 
-     @include sm {
+    @include sm {
       display: none;
     }
 
@@ -32,12 +30,12 @@ nav {
       align-items: center;
       gap: 10px;
 
-    img {
+      img {
         width: 28px;
       }
 
       span {
-         @include md {
+        @include md {
           display: none;
         }
 
@@ -47,7 +45,6 @@ nav {
       }
     }
   }
-
   .right {
     flex: 2;
     display: flex;
@@ -61,8 +58,51 @@ nav {
     }
 
     a {
-      padding: 12px 2px;
+      padding: 12px 24px;
       margin: 20px;
+    }
+
+    .user{
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+
+      img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+
+      span{
+        @include sm{
+          display: none;
+        }
+      }
+
+      .profile{
+        padding: 12px 24px;
+        background-color: #fece51;
+        cursor: pointer;
+        border: none;
+        position: relative;
+        
+        .notification{
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          background-color: red;
+          color: white;
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+      }
     }
 
     .register {
@@ -73,7 +113,7 @@ nav {
       display: none;
       z-index: 999;
 
-      img{
+      img {
         width: 36px;
         height: 36px;
         cursor: pointer;
@@ -88,25 +128,24 @@ nav {
       position: absolute;
       top: 0;
       right: -50%;
-      background: black;
+      background-color: black;
       color: white;
       height: 100vh;
       width: 50%;
+      transition: all 1s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       font-size: 24px;
-      transition: all 1s ease;
-      
 
       &.active {
         right: 0;
       }
 
-      @include sm{
+      @include sm {
         a {
-            display: initial;
+          display: initial;
         }
       }
     }

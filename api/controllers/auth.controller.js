@@ -64,12 +64,14 @@ export const login = async (req, res) => {
         }, process.env.JWT_SECRET_KEY,
             { expiresIn: age });
 
+            const {password:userPasword, ...userInfo } = user;
+
 
         res.cookie("token", token,
             {
                 httpOnly: true,
                 maxAge: age,
-            }).status(200).json({ message: "Login succesful" });
+            }).status(200).json();
 
     } catch (error) {
         console.log(error)
@@ -80,6 +82,6 @@ export const login = async (req, res) => {
 };
 
 export const logout = (req, res) => {
-    res.clearCokie("token").status(200).json({ message: "Logout Sucesful" });
+    res.clearCookie("token").status(200).json({ message: "Logout Sucesful" });
 
 }

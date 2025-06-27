@@ -13,6 +13,7 @@ function Login() {
   const handelSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("")
     const formData = new FormData(e.target);
     const username = formData.get("username");
     const password = formData.get("password");
@@ -22,7 +23,10 @@ function Login() {
         username,
         password,
       });
-      navigate("/login");
+
+      localStorage.setItem("user", JSON.stringify(res.data));
+
+      navigate("/");
     } catch (error) {
       setError(error.response?.data?.message || "Registration failed");
     } finally {
